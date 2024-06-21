@@ -17,13 +17,13 @@ function Box({ time, color, scale, position, onClick, hovered, onHover, backgrou
 
   return (
     <mesh
-      ref={ref}
-      position={position}
-      scale={scale}
-      onClick={onClick}
-      onPointerOver={(event) => (event.stopPropagation(), onHover(true))}
-      onPointerOut={(event) => onHover(false)}
-    >
+  ref={ref}
+  position={position}
+  scale={scale}
+  onClick={onClick}
+  onPointerOver={(event) => (event.stopPropagation(), onHover(true))}
+  onPointerOut={(event) => onHover(false)}
+>
       <boxGeometry args={[1, 1, 1]} />
       <meshStandardMaterial color={hovered ? 'hotpink' : color} map={new THREE.TextureLoader().load(background)} />
       <Text position={[0, 0, 0.51]} {...textProps}>
@@ -99,7 +99,7 @@ function App() {
             onClick={() => {}}
             hovered={hovered[0]}
             onHover={(value) => handleHover(0, value)}
-            background={box1} // Use imported image directly
+            background={box1}
           />
           <Box
             position={[1.2, 0, 0]}
@@ -109,7 +109,7 @@ function App() {
             onClick={() => {}}
             hovered={hovered[1]}
             onHover={(value) => handleHover(1, value)}
-            background={box2} // Use imported image directly
+            background={box2}
           />
           <OrbitControls minDistance={2} maxDistance={6} />
         </Canvas>
@@ -122,7 +122,6 @@ function App() {
           <button className="btn btn-primary btn-lg" style={{ width: '10rem', marginLeft: '10rem' }} onClick={resetTimer}>
             Reset
           </button>
-
         </div>
         <h1 className='text-white' style={{textAlign:"center",marginTop:"2rem",marginLeft:"5rem"}}>🅿🅾🅼🅾🅳🅾🆁🅾</h1>
       </div>
