@@ -18,3 +18,137 @@ button {
 h1 {
   font-size: 48px;
 }
+
+.canvas-container {
+  position: relative;
+  width: 100%;
+  height: 30rem; /* Adjust height as needed */
+}
+
+.canvas-container canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.button-container button {
+  margin-left: 1rem;
+  width: 10rem;
+}
+
+
+.canvas-container {
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rem;
+}
+
+.controls {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.title {
+  color: white;
+  margin-top: 2rem;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .canvas-container {
+    height: 40vh;
+    margin-top: 5rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .btn-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 80%;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .canvas-container {
+    height: 30vh;
+    margin-top: 2rem;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .btn-container {
+    gap: 1rem;
+  }
+
+  .btn {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .app-container {
+    margin-top: 0;
+    height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .canvas-container {
+    margin-top: 5rem;
+    height: 20rem;
+  }
+
+  .buttons-container button {
+    width: 8rem;
+    margin: 0 1rem;
+  }
+
+  .title {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .canvas-container {
+    height: 15rem;
+  }
+
+  .buttons-container button {
+    width: 7rem;
+    margin: 0 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .title {
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+  }
+}
