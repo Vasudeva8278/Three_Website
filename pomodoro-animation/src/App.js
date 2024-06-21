@@ -3,8 +3,7 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Text } from '@react-three/drei';
 import * as THREE from 'three';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import DarkMode from './component/DarkMode/DarkMode';
-
+import bg from './assets/bg.png';
 
 
 function Box({ time, color, scale, position, onClick, hovered, onHover, background }) {
@@ -47,7 +46,7 @@ function App() {
       interval = setInterval(() => {
         setSeconds((prevSeconds) => {
           if (prevSeconds === 59) {
-            setMinutes((prevMinutes) => prevMinutes + 0.5);
+            setMinutes((prevMinutes) => prevMinutes + 1);
             return 0;
           }
           return prevSeconds + 1;
@@ -76,9 +75,8 @@ function App() {
 
 
     <>
-    <DarkMode/>
-  
-    <div style={{marginTop:"-10rem"}}>
+   
+    <div style={{ backgroundImage: `url(${bg})`,marginTop:"-10rem",height: '125vh', backgroundSize: 'cover'}}>
       <Canvas style={{ height: '50rem' }}>
         <ambientLight intensity={0.5} />
         <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={1} />
@@ -105,16 +103,16 @@ function App() {
         />
         <OrbitControls minDistance={2} maxDistance={6} />
       </Canvas>
-      <div style={{ textAlign: 'center', marginTop: '-6rem' }}>
-  <button className="btn btn-primary btn-lg" style={{ width: "10rem", marginRight: "2rem" }} onClick={() => setIsActive(!isActive)}>
-    {isActive ? 'Pause' : 'Start'}
-  </button>
-  <button className="btn btn-danger btn-lg" style={{ width: "10rem" }} onClick={resetTimer}>
-    Reset
-  </button>
-</div>
-
+      <div style={{ textAlign: 'center', marginTop: '1rem' }}>
+        <button className="btn btn-danger btn-lg" style={{marginLeft:"5rem",width:"10rem"}}onClick={() => setIsActive(!isActive)}>{isActive ? 'Pause' : 'Start'}</button>
+        <button  className="btn btn-primary btn-lg" style={{width:"10rem",marginLeft:"10rem"}}onClick={resetTimer}>Reset</button>
+      </div>
+      <br/>
+      <br/>
+      
     </div>
+    
+    
     </>
   );
 }
